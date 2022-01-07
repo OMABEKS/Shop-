@@ -1,0 +1,55 @@
+.basket-container{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 50px;
+
+}
+.card-basket{
+    display: flex;
+}
+
+.quantity{
+    display: flex;
+    flex-direction: column;
+    margin-left: 800px;
+}
+.form-popup{
+    margin-top: 50px;
+}
+
+
+.card-container{
+  display: flex;
+  margin-left: 1000px;
+  margin-top: auto;
+}
+.card2 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card2 {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    
+  }
+  
+ 
