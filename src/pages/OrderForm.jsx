@@ -3,37 +3,43 @@ import { Form } from 'semantic-ui-react';
 import { useForm } from "react-hook-form";
 import {Button , Input} from "react-bootstrap"
 import "./OrderForm.css"
-
 export default function FormValidation() {
     const { register, handleSubmit, formState: { errors } } = useForm();
+
     const onSubmit = (data) => {
         console.log(data);
     }
     return (
-        <div className='form-container'>
-            <Form className='w-25' onSubmit={handleSubmit(onSubmit)}>
+        <div className="row mt-5">
+            <div className="col-75">
+                <div className="container d-flex justify-content-center">
+            <Form className='w-25 d-flex flex-column align-content-center' onSubmit={handleSubmit(onSubmit)}>
+
+                <div className="input-form">
+                    <Form.Field>
+                        <input
+                            style={{width:"100%"}}
+                            placeholder='Имя'
+                            type="text"
+                            {...register("name", { required: true, maxLength: 11 })}
+                        />
+                    </Form.Field>
+                    {errors.lastName &&  <div className={"error"}><p style={{color:"red"}} className="text-error">Пожалуйста, укажите Имя</p></div>}
+                </div>
+                <div className="input-form">
+                    <Form.Field>
+                        <input
+                            style={{width:"100%"}}
+                            placeholder='Фамилия'
+                            type="text"
+                            {...register("lastName", { required: true, maxLength: 11 })}
+                        />
+                    </Form.Field>
+                    {errors.lastName &&  <div className={"error"}><p style={{color:"red"}} className="text-error">Пожалуйста, укажите Фамилию</p></div>}
+                </div>
+                <div className="input-form">
+
                 <Form.Field>
-                    <label>Имя</label>
-                    <input
-                        style={{width:"100%"}}
-                        placeholder='Имя'
-                        type="text"
-                        {...register("firstName", { required: true, maxLength: 10 })}
-                    />
-                </Form.Field>
-                {errors.firstName && <p style={{color:"red"}} className="text-error">Пожалуйста введите Имя</p>}
-                <Form.Field>
-                    <label>Фамилия</label>
-                    <input
-                         style={{width:"100%"}}
-                        placeholder='Фамилия'
-                        type="text"
-                        {...register("lastName", { required: true, maxLength: 11 })}
-                    />
-                </Form.Field>
-                {errors.lastName && <p style={{color:"red"}} className="text-error">Пожалуйста введите Фамилию</p>}
-                <Form.Field>
-                    <label>Email</label>
                     <input
                           style={{width:"100%"}}
                         placeholder='Email'
@@ -45,39 +51,43 @@ export default function FormValidation() {
                             })}
                     />
                 </Form.Field>
-                {errors.email && <p style={{color:"red"}} className="text-error">Пожалуйста введите Email</p>}
+                {errors.email && <div className={"error"}> <p style={{color:"red"}} className="text-error">Пожалуйста, укажите Email</p></div>}
+                </div>
 
+                <div className="input-form">
                 <Form.Field>
-                    <label>Адрес</label>
                     <input
                          style={{width:"100%"}}
                         placeholder='Адрес'
-                        type="adress"
-                        {...register("adress",
+                        type="address"
+                        {...register("address",
                             {
                                 required: true,
                                 pattern: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
                             })}
                     />
                 </Form.Field>
-                {errors.email && <p style={{color:"red"}} className="text-error">Пожалуйста введите Адрес</p>}
+                {errors.email &&  <div className={"error"}><p style={{color:"red"}} className="text-error">Пожалуйста, укажите адрес</p></div>}
+                </div>
 
+                <div className="input-form">
                 <Form.Field>
-                    <label>Номер</label>
                     <input
                          style={{width:"100%"}}
                         placeholder='Номер'
-                        type="number"
+                        type="tel"
                         {...register("number", {
                             required: true,
-                            pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,15}$/
-                        })}
-                    />
+                            pattern: /^[0-9\b]+$/
+                        })}/>
                 </Form.Field>
-                {errors.password && <p style={{color:"red"}} className="text-error">Пожалуйста введите номер телефона</p>}
+                    {errors.number &&   <div className={"error"}><p style={{color:"red"}} className="text-error">Пожалуйста, укажите номер телефона</p></div>}
+                </div>
                 <br/>
-                <Button type='submit'>Отправить</Button>
+                <Button className={"btn btn-warning"} type='submit'>Отправить</Button>
             </Form>
+                </div>
+            </div>
         </div>
     )
 }
