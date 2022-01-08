@@ -4,5 +4,49 @@
     text-align: center;
     margin-top: 100px;
     border-radius: 60px;
-  
+
+}
+
+
+input {
+    caret-color: transparent;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+i {
+    margin-right: 5px;
+    display: block;
+}
+
+.btn-warning {
+    border-radius: 10px;
+}
+
+.error{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 300px;
+    left: 300px;
+    position: absolute;
+    background-color: aliceblue;
+}
+.text-error{
+    width: 300px;
+}
+
+form{
+    position: relative;
+}
+
+.input-form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
 }
