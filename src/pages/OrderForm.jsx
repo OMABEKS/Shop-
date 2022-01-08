@@ -81,7 +81,7 @@ export default function FormValidation() {
                             pattern: /^[0-9\b]+$/
                         })}/>
                 </Form.Field>
-                    {errors.number &&   <div className={"error"}><p style={{color:"red"}} className="text-error">Пожалуйста, укажите номер телефона</p></div>}
+                    {errors.number  &&   <div className={"error"}><p style={{color:"red"}} className="text-error">Пожалуйста, укажите номер телефона</p></div>}
                 </div>
                 <br/>
                 <Button className={"btn btn-warning"} type='submit'>Отправить</Button>

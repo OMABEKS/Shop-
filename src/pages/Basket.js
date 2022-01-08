@@ -7,7 +7,6 @@ import './Basket.css'
 
 
 const Basket = observer(() => {
-  
     const items=JSON.parse(localStorage.getItem("products"))||[];
     
     function changeProductCount (count , id) {
